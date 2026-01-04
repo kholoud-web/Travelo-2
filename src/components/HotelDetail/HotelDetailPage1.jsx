@@ -34,7 +34,7 @@ export default function HotelDetailPage1() {
     <>
       {/* HERO */}
       <div
-        className="relative h-[520px]"
+        className="relative h-130"
         style={{
           background: `linear-gradient(90deg, rgba(0,35,77,.65) 15%, rgba(0,35,77,0) 75%), url(/assets/images/hoteldetail1.jpg) center/cover no-repeat`,
         }}
@@ -204,7 +204,7 @@ export default function HotelDetailPage1() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-            <div className="bg-teal-500 text-white rounded-2xl p-10 flex flex-col justify-between min-h-[420px]">
+            <div className="bg-teal-500 text-white rounded-2xl p-10 flex flex-col justify-between min-h-105">
               <div>
                 <div className="flex justify-between items-start mb-6">
                   <h3 className="text-3xl font-bold leading-snug">
@@ -236,7 +236,7 @@ export default function HotelDetailPage1() {
 
             {/* الصور */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-xl overflow-hidden aspect-[4/3]">
+              <div className="rounded-xl overflow-hidden aspect-4/3">
                 <img
                   src="/assets/images/srilanka1.jpg"
                   alt="Sri Lanka nature"
@@ -244,7 +244,7 @@ export default function HotelDetailPage1() {
                 />
               </div>
 
-              <div className="rounded-xl overflow-hidden aspect-[4/3]">
+              <div className="rounded-xl overflow-hidden aspect-4/3">
                 <img
                   src="/assets/images/srilanka2.jpg"
                   alt="Sri Lanka beach"
@@ -252,7 +252,7 @@ export default function HotelDetailPage1() {
                 />
               </div>
 
-              <div className="rounded-xl overflow-hidden aspect-[4/3]">
+              <div className="rounded-xl overflow-hidden aspect-4/3">
                 <img
                   src="/assets/images/srilanka3.jpg"
                   alt="Sri Lanka forest"
@@ -260,7 +260,7 @@ export default function HotelDetailPage1() {
                 />
               </div>
 
-              <div className="rounded-xl overflow-hidden aspect-[4/3]">
+              <div className="rounded-xl overflow-hidden aspect-4/3">
                 <img
                   src="/assets/images/srilanka4.jpg"
                   alt="Sri Lanka resort"

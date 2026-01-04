@@ -9,6 +9,7 @@ import Logo from "/assets/icons/GG.png";
 import LanguagesModal from "../../components/Search/LanguagesModal";
 import CurrencyModal from "../../components/Search/CurrencyModal";
 import { ShoppingCart } from "lucide-react";
+import Cities from '../../Pages/city/Cities';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,14 +37,13 @@ const Navbar = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
         className="top-0 left-0 right-0 z-50  bg-primary  w-full relative "
-        // className="fixed top-0 left-0 right-0 z-50  bg-primary  w-full relative "
       >
         <div className="flex justify-between items-center md:w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:gap-4 ">
           <div className="flex items-center justify-center gap-2">
             <h1 className="font-medium sm:text-4xl lg:text-5xl logo-font">
               Travel
             </h1>
-            <img className="w-[50px] h-[46px]" src={Logo} />
+            <img className="w-12.5 h-11.5" src={Logo} />
           </div>
 
           <div className="md:flex gap-2 md:gap-4 items-center flex-1 justify-center">
@@ -65,7 +65,7 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to={"tours"}
+                  to={"cities"}
                   className={({ isActive }) =>
                     `px-2 py-1 rounded-lg main-font font-medium text-[20px] transition
                   ${
@@ -75,7 +75,7 @@ const Navbar = () => {
                   }`
                   }
                 >
-                  Tours
+                  Cities
                 </NavLink>
               </li>
               <li>
@@ -110,7 +110,7 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to={"HotelDetailPage1"}
+                  to={"Hotels"}
                   className={({ isActive }) =>
                     `px-2 py-1 rounded-lg main-font font-medium text-[20px] transition
                   ${
@@ -209,7 +209,34 @@ const Navbar = () => {
             <ul className="flex flex-col gap-4 p-4">
               <li>
                 <Link
-                  to={"#/flight-flow"}
+                  to={"/"}
+                  className="px-2 py-1 hover:text-accent transition main-font  font-medium text-[20px]"
+                  onClick={toggleMenu}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={"cities"}
+                  className="px-2 py-1 hover:text-accent transition main-font  font-medium text-[20px]"
+                  onClick={toggleMenu}
+                >
+                  Cities
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={"restaurant"}
+                  className="px-2 py-1 hover:text-accent transition main-font  font-medium text-[20px]"
+                  onClick={toggleMenu}
+                >
+                  Restaurant
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={"tickets"}
                   className="px-2 py-1 hover:text-accent transition main-font  font-medium text-[20px]"
                   onClick={toggleMenu}
                 >
@@ -218,34 +245,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  to={""}
-                  className="px-2 py-1 hover:text-accent transition main-font  font-medium text-[20px]"
-                  onClick={toggleMenu}
-                >
-                  Tours
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={""}
-                  className="px-2 py-1 hover:text-accent transition main-font  font-medium text-[20px]"
-                  onClick={toggleMenu}
-                >
-                  Destination
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={""}
-                  className="px-2 py-1 hover:text-accent transition main-font  font-medium text-[20px]"
-                  onClick={toggleMenu}
-                >
-                  Activities
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={"HotelDetailPage1"}
+                  to={"Hotels"}
                   className="px-2 py-1 hover:text-accent transition main-font  font-medium text-[20px]"
                   onClick={toggleMenu}
                 >
@@ -255,7 +255,7 @@ const Navbar = () => {
 
               <li>
                 <Link
-                  to={""}
+                  to={"contact"}
                   className="px-2 py-1 hover:text-accent transition main-font  font-medium text-[20px]"
                   onClick={toggleMenu}
                 >

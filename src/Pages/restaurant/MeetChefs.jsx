@@ -49,7 +49,7 @@ const MeetChefs = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
         {chefs.map((chef) => (
           // الكارت
-          <div key={chef.id} className="relative overflow-hidden rounded-[20px] group shadow-lg h-[400px]">
+          <div key={chef.id} className="relative overflow-hidden rounded-[20px] group shadow-lg h-100">
             
             <img 
               src={chef.img} 

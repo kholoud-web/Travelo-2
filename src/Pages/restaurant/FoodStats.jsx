@@ -29,7 +29,7 @@ const FoodStats = () => {
   ];
 
   return (
-    <section className="relative w-full h-[468px] bg-cover bg-center bg-fixed flex items-center" 
+    <section className="relative w-full h-117 bg-cover bg-center bg-fixed flex items-center" 
       style={{ 
         
         backgroundImage: "url('/assets/images/Food/Group 1000002107.png')" 

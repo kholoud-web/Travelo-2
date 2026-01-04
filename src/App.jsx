@@ -60,6 +60,9 @@ import Contact from "./Pages/contact/Contact.jsx";
 import FlightPayment from "./Pages/Home/Flight Flow/flightPayment.jsx";
 import MyNextTripDetails from "./components/profile/MyNextTripDetails.jsx";
 import Home from "./Pages/Home/Home.jsx";
+import City from "./Pages/city/Cities.jsx";
+import Cities from "./Pages/city/Cities.jsx";
+import CityDetails from "./Pages/city/cityDetails/CityDetails.jsx";
 
 const HotelDetailPage1 = lazy(() =>
   import("./components/HotelDetail/HotelDetailPage1.jsx")
@@ -88,11 +91,14 @@ const App = () => {
         { path: "payment/:id", element: <Payment /> }, // conect with any payment
         { path: "reservationSuccess/:id", element: <ReservationSuccess /> }, // last payment step
         { path: "restaurant", element: <Restaurant /> },
+        { path: "cities", element: <Cities /> },
+        { path: "/cities/:cityId", element: <CityDetails /> },
+
         { path: "restaurant/menu", element: <Menu /> },
 
         { path: "flight-flow", element: <FlightFlow /> },
         { path: "flight-lists", element: <FlightLists /> },
-        { path: "HotelDetailPage1", element: <HotelDetailPage1 /> },
+        { path: "Hotels", element: <HotelDetailPage1 /> },
         { path: "PropertyDetails", element: <PropertyDetails /> },
         { path: "map", element: <Mapp /> },
 

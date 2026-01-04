@@ -94,7 +94,7 @@ const ChooseFood = () => {
                   />
                 </div>
 
-                <div className="col-span-2 lg:col-span-1 relative overflow-hidden shadow-lg w-full lg:w-[281px] h-[231px] rounded-md border border-gray-200 lg:mt-16">
+                <div className="col-span-2 lg:col-span-1 relative overflow-hidden shadow-lg w-full lg:w-70.25 h-57.75 rounded-md border border-gray-200 lg:mt-16">
                   <img
                     src="/assets/images/Food/unsplash_dphM2U1xq0U (1).png"
                     alt="Burger"
@@ -102,8 +102,8 @@ const ChooseFood = () => {
                   />
                 </div>
 
-                <div className="col-span-2 flex flex-col lg:flex-row gap-4 mt-8 h-auto lg:h-[306px]">
-                  <div className="relative overflow-hidden shadow-md w-full lg:w-[204px] h-[306px] rounded-md border border-gray-200 shrink-0">
+                <div className="col-span-2 flex flex-col lg:flex-row gap-4 mt-8 h-auto lg:h-76.5">
+                  <div className="relative overflow-hidden shadow-md w-full lg:w-51 h-76.5 rounded-md border border-gray-200 shrink-0">
                     <img
                       src="/assets/images/Food/unsplash_CLMpC9UhyTo.png"
                       alt="Salad"
@@ -111,8 +111,8 @@ const ChooseFood = () => {
                     />
                   </div>
 
-                  <div className="flex-1 flex gap-4 h-[306px] lg:h-full">
-                    <div className="relative overflow-hidden shadow-md w-full lg:w-[221px] h-[226px] rounded-md border border-gray-200 shrink-0">
+                  <div className="flex-1 flex gap-4 h-76.5 lg:h-full">
+                    <div className="relative overflow-hidden shadow-md w-full lg:w-55.25 h-56.5 rounded-md border border-gray-200 shrink-0">
                       <img
                         src="/assets/images/Food/unsplash_-GFCYhoRe48.png"
                         alt="Pancakes Honey"

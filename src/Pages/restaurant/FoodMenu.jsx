@@ -46,7 +46,7 @@ const FoodMenu = () => {
         
       <div className="w-full lg:w-1/3 flex justify-center items-center relative py-10">
             
-            <div className="absolute w-[320px] h-80 lg:w-[450px] lg:h-[450px] z-0 pointer-events-none">
+            <div className="absolute w-[320px] h-80 lg:w-112.5 lg:h-112.5 z-0 pointer-events-none">
                  <img 
                     src="/assets/images/Food/unsplash_INjdgkCwHp0.png" 
                     alt="Decoration Leaves" 
@@ -55,7 +55,7 @@ const FoodMenu = () => {
             </div>
 
             {/* 2. صورة الطبق الرئيسي - في الأمام */}
-            <div className="relative w-[280px] h-[280px] lg:w-[380px] lg:h-[380px] z-10">
+            <div className="relative w-70 h-70 lg:w-95 lg:h-95 z-10">
                 <img 
                     src="/assets/images/Food/unsplash_Lv174o7fn7Y.png" 
                     alt="Main Plate" 

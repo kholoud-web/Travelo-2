@@ -26,18 +26,18 @@ const herosec = () => {
         </Link>
       </div>
 
-      <div className="relative w-full lg:w-1/2 h-[400px] lg:h-[600px] flex justify-center items-center">
+      <div className="relative w-full lg:w-1/2 h-100 lg:h-150 flex justify-center items-center">
         <img
           src="/assets/images/Food/image 68.png"
           alt="Leaf Background"
-          className="absolute top-0 right-0 lg:-right-4 w-64 lg:w-[400px] rotate-12 z-0 opacity-90 pointer-events-none"
+          className="absolute top-0 right-0 lg:-right-4 w-64 lg:w-100 rotate-12 z-0 opacity-90 pointer-events-none"
         />
 
         <div className="relative z-10">
           <img
             src="/assets/images/Food/Rectangle 8926.png"
             alt="Main Dish"
-            className="w-64 h-64 lg:w-[450px] lg:h-[450px] object-cover rounded-full shadow-2xl  "
+            className="w-64 h-64 lg:w-112.5 lg:h-112.5 object-cover rounded-full shadow-2xl  "
           />
         </div>
 
