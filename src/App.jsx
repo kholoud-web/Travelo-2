@@ -6,7 +6,7 @@ import Support from "./Pages/profile/Support.jsx";
 import Feedback from "./components/feedback/Feedback.jsx";
 import Restaurant from "./Pages/restaurant/Resturant.jsx";
 import Menu from "./Pages/restaurant/menu/Menu.jsx";
-import BookimgDetails from "./Pages/Home/Flight Flow/BookingDetails.jsx";
+import BookimgDetails from "./Pages/Home/FlightFlow/BookingDetails.jsx";
 
 // const Home = lazy(() => import("./Pages/Home/Home.jsx"));
 const SignUp = lazy(() => import("./Pages/Auth/SignUp.jsx"));
@@ -30,14 +30,14 @@ const Details = lazy(() => import("./Pages/profile/trips/Details.jsx"));
 const Settings = lazy(() => import("./Pages/profile/Settings.jsx"));
 
 const FlightFlow = lazy(() =>
-  import("./Pages/Home/Flight Flow/FlightFlow.jsx")
+  import("./Pages/Home/FlightFlow/FlightFlow.jsx")
 );
 
 const FlightLists = lazy(() =>
-  import("./Pages/Home/Flight Flow/flightLists.jsx")
+  import("./Pages/Home/FlightFlow/flightLists.js")
 );
 const FlightDeals = lazy(() =>
-  import("./Pages/Home/Flight Flow/flightDeals.jsx")
+  import("./Pages/Home/FlightFlow/flightDeals.js")
 );
 const Loader = () => (
   <div className="flex items-center justify-center min-h-screen">
@@ -57,7 +57,7 @@ import Blog from "./Pages/restaurant/blog/Blog.jsx";
 import SignUPHotel from "./Pages/Auth/SignUPHotel.jsx";
 import SignUPTourist from "./Pages/Auth/SignUPTourist";
 import Contact from "./Pages/contact/Contact.jsx";
-import FlightPayment from "./Pages/Home/Flight Flow/flightPayment.jsx";
+import FlightPayment from "./Pages/Home/FlightFlow/flightPayment.js";
 import MyNextTripDetails from "./components/profile/MyNextTripDetails.jsx";
 import Home from "./Pages/Home/Home.jsx";
 import City from "./Pages/city/Cities.jsx";

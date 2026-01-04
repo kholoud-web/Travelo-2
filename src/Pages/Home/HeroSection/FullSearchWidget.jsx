@@ -35,7 +35,7 @@ const FullSearchWidget = () => {
         <input
           type="text"
           name="hotelName"
-          placeholder="Enter hotel name"
+          placeholder="Enter city name"
           value={searchQuery}
           onChange={handleInputChange}
           className="grow p-3 md:p-4 text-gray-700 bg-transparent focus:outline-none placeholder-gray-400 text-lg ml-3 md:ml-4"
