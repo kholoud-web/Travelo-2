@@ -4,6 +4,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AirportModal } from "./AirportModal.jsx";
 import { useLocation, useNavigate } from "react-router-dom";
+
+
 const types = [
   { id: 1, name: "flights", icon: <Plane /> },
   { id: 2, name: "stays", icon: <BedDouble /> },

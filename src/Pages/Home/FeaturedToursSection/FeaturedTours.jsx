@@ -72,7 +72,7 @@ const FeaturedTours = () => {
             autoplay={{ delay: 2500, disableOnInteraction: false }}
             loop={true}
           >
-            {tours.map((tour) => (
+            {/* {tours.map((tour) => (
               <SwiperSlide key={tour.id}>
                 <FeaturedCards
                   id={tour.id}
@@ -84,7 +84,7 @@ const FeaturedTours = () => {
                   difficultyLevel="Family"
                 />
               </SwiperSlide>
-            ))}
+            ))} */}
           </Swiper>
         </div>
       )}

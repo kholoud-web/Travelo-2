@@ -1,5 +1,10 @@
 import { Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
+
+
+
+
 export default function FlightCard({ flight }) {
   return (
     <div className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
