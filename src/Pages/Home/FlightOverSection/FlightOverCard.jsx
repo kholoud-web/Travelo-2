@@ -16,7 +16,7 @@ const FlightOverCard = ({ src }) => {
       </div>
 
       {/* card right side */}
-      <div className="bg-white rounded-4xl md:rounded-3xl absolute left-30 md:left-50  p-5 shadow-md z-10 md:h-[400px] lg:h-80 w-3/5">
+      <div className="bg-white rounded-4xl md:rounded-3xl absolute left-30 md:left-50  p-5 shadow-md z-10 md:h-100 lg:h-80 w-3/5">
         <div className="space-y-2 main-font pe-12">
           {/* div1 */}
           <div className="flex items-center gap-2 md:gap-5 mt-10 mr-1 md:mr-5 justify-between">

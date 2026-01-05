@@ -1,7 +1,7 @@
 import { Globe, User, ChevronDown, Plane } from 'lucide-react';
-import FlightCard from '../../../components/Flight Flow/flightCard';
-import SearchBar from '../../../components/Flight Flow/flightSearchArea';
-import Filters from '../../../components/Flight Flow/flightfilter';
+import FlightCard from '../../../components/FlightFlow/flightCard';
+import SearchBar from '../../../components/FlightFlow/flightSearchArea';
+import Filters from '../../../components/FlightFlow/flightfilter';
 import { flights } from '../../../data/flightDeals';
 const FlightLists=()=> {
 
