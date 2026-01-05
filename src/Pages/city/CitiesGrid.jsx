@@ -30,15 +30,17 @@ import axiosClient from "../../../axiosClient";
 // ];
 
 const CitiesGrid = ({ filters }) => {
-
   const [cities, setCities] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log("Cities data loaded");
-    axiosClient.get("/api/cities").then((response) => {
-      console.log("Fetched cities from API:", response.data);
-      setCities(response.data);
-    });
+    axiosClient
+      .get("/api/cities")
+      .then((response) => {
+        setCities(response.data);
+      })
+      .catch((err) => console.error(err))
+      .finally(() => setLoading(false));
   }, []);
 
   const filteredCities = cities.filter((city) => {
@@ -47,10 +49,16 @@ const CitiesGrid = ({ filters }) => {
       .includes(filters.search.toLowerCase());
 
     const matchHotels =
-      !filters.minHotels || city.hotels >= Number(filters.minHotels);
+      !filters.minHotels || city.hotelsCount >= Number(filters.minHotels);
 
     return matchSearch && matchHotels;
   });
+
+  if (loading) {
+    return (
+      <p className="text-center text-gray-500 py-24">Loading cities...</p>
+    );
+  }
 
   return (
     <section className="max-w-7xl mx-auto px-10 py-24">
@@ -65,7 +73,11 @@ const CitiesGrid = ({ filters }) => {
             to={`/cities/${city.id}`}
             className="rounded-xl overflow-hidden shadow hover:shadow-xl transition"
           >
-            <img src={city.heroImage} className="h-60 w-full object-cover" />
+            <img
+              src={city.heroImage}
+              alt={city.name}
+              className="h-60 w-full object-cover"
+            />
 
             <div className="p-4">
               <h3 className="text-xl font-bold">{city.name}</h3>
@@ -79,5 +91,6 @@ const CitiesGrid = ({ filters }) => {
     </section>
   );
 };
+
 
 export default CitiesGrid;
