@@ -8,21 +8,21 @@ const LatestBlog = () => {
       img: "/assets/images/Food/unsplash_MRHyv-hHxgk.png",
       date: "10 February 2022",
       title: "Curabitur rutrum velit ac congue malesuada",
-      link: "/restaurant/blog",
+      link: "/cities/:cityId/restaurant/blog",
     },
     {
       id: 2,
       img: "/assets/images/Food/unsplash_q54Oxq44MZs.png",
       date: "10 February 2022",
       title: "Curabitur rutrum velit ac congue malesuada",
-      link: "/restaurant/blog",
+      link: "/cities/:cityId/restaurant/blog",
     },
     {
       id: 3,
       img: "/assets/images/Food/unsplash_lP5MCM6nZ5A (2).png",
       date: "10 February 2022",
       title: "Curabitur rutrum velit ac congue malesuada",
-      link: "/restaurant/blog",
+      link: "/cities/:cityId/restaurant/blog",
     },
   ];
 

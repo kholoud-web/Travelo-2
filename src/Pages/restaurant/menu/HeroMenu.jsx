@@ -13,7 +13,7 @@ function HeroMenu() {
       </h1>
       <p className="relative z-10 ">
         <Link
-          to="/restaurant"
+          to="/cities/:cityId/restaurant"
           className="text-white me-3 font-semibold hover:text-[#2EC4B5]"
         >
           Home

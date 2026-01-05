@@ -19,7 +19,7 @@ const herosec = () => {
           pharetra dictum neque massa congue.
         </p>
 
-        <Link to="/restaurant/menu">
+        <Link to="/cities/:cityId/restaurant/menu">
           <button className="bg-[#2EC4B6] text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-[#259f8e] hover:scale-105 transition-transform duration-300 mx-auto lg:mx-0">
             See Menu
           </button>

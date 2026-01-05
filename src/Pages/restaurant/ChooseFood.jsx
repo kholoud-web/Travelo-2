@@ -61,7 +61,7 @@ const ChooseFood = () => {
                   </div>
 
                   <div className="bg-[#2ebfab] text-white font-bold px-8 py-3 rounded-full shadow-md text-lg">
-                    <Link to="/restaurant/shop">{item.title}</Link>
+                    <Link to="/cities/:cityId/restaurant/shop">{item.title}</Link>
                   </div>
                 </div>
               )}
@@ -72,7 +72,7 @@ const ChooseFood = () => {
                     {item.title}
                   </span>
                   <Link
-                    to="/restaurant/shop"
+                    to="/cities/:cityId/restaurant/shop"
                     className="bg-[#2ebfab] text-white font-semibold px-4 py-2 mt-3 rounded-full shadow-md text-lg cursor-pointer"
                   >
                     <button className="cursor-pointer">Shop Now</button>

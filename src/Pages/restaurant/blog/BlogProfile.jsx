@@ -223,7 +223,7 @@ function BlogProfile() {
               <img
                 src={img}
                 alt="gallery"
-                className="w-[110px] h-[70px] object-cover"
+                className="w-27.5 h-17.5 object-cover"
               />
 
               {/* Overlay */}

@@ -98,7 +98,7 @@ function SecondPart() {
                 <img
                   src={item.img}
                   alt={item.title}
-                  className="w-full h-[220px] object-cover group-hover:scale-105 transition"
+                  className="w-full h-55 object-cover group-hover:scale-105 transition"
                 />
               </div>
 

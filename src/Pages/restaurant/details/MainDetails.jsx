@@ -62,7 +62,7 @@ function MainDetails() {
           <img
             src={images[current]}
             alt=""
-            className="w-full h-[450px] object-cover rounded-xl transition-all duration-500"
+            className="w-full h-112.5 object-cover rounded-xl transition-all duration-500"
           />
         </div>
       </div>

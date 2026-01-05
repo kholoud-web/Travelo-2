@@ -6,7 +6,7 @@ function BlogCart() {
     <div className="bg-white border border-gray-200 rounded-md overflow-hidden mb-6">
       {/* Image */}
       <div className="relative">
-        <img src={blog} alt="blog" className="w-full h-[360px] object-cover" />
+        <img src={blog} alt="blog" className="w-full h-90 object-cover" />
 
         {/* Date Badge */}
         <div className="absolute top-5 left-5 bg-orange-400 text-white text-center px-3 py-2 rounded-sm">

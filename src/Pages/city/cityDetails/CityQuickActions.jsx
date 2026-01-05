@@ -11,7 +11,7 @@ const CityQuickActions = ({ cityId }) => {
       </Link>
 
       <Link
-        to={`/cities/${cityId}/restaurants`}
+        to={`/cities/${cityId}/restaurant`}
         className="border border-teal-500 text-teal-500 px-6 py-3 rounded-lg"
       >
         Explore Restaurants
