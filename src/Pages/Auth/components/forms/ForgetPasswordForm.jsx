@@ -5,14 +5,17 @@ import CustomInputField from "../../../../components/common/CustomInputField";
 
 import { SocialIcons } from "../SocialIconsBox";
 import { OrLoginSeparator } from "../OrLoginSeparator";
+import { useNavigate } from "react-router-dom";
+import { forgetPassword } from "../../../../api/authApi";
 const forgetPasswordSchema = z.object({
   email: z.email({ message: "Invalid email address" }),
 });
 export default function ForgetPasswordForm() {
+    const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
-
     formState: { errors },
   } = useForm({
     mode: "onChange",
@@ -22,10 +25,19 @@ export default function ForgetPasswordForm() {
     },
   });
 
-  const onSubmit = (data) => {
-    console.log({ ...data });
-  };
+   // ✅ API call
+  const onSubmit = async (data) => {
+    try {
+      await forgetPassword({ email: data.email });
 
+      // نخزن الإيميل عشان المراحل الجاية
+      localStorage.setItem("resetEmail", data.email);
+
+      navigate("/verify-code");
+    } catch (error) {
+      alert("Failed to send verification code");
+    }
+  };
   return (
     <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
       <div className="flex flex-col gap-10">

@@ -1,19 +1,24 @@
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import CustomInputField from "../../../../components/common/CustomInputField";
+import { useNavigate, Link } from "react-router-dom";
 
+import CustomInputField from "../../../../components/common/CustomInputField";
 import { SocialIcons } from "../SocialIconsBox";
 import { OrLoginSeparator } from "../OrLoginSeparator";
-import { Link } from "react-router-dom";
+import { verifyCode } from "../../../../api/authApi";
+
+// ✅ Schema
 const verifyCodeSchema = z.object({
-  verifyCode: z.string({ message: "Please enter verification code" }),
+  verifyCode: z.string().min(4, "Please enter verification code"),
 });
+
 export default function VerifyCodeForm() {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
-
     formState: { errors },
   } = useForm({
     mode: "onChange",
@@ -23,22 +28,36 @@ export default function VerifyCodeForm() {
     },
   });
 
-  const onSubmit = (data) => {
-    console.log({ ...data });
+  const onSubmit = async (data) => {
+    try {
+      const email = localStorage.getItem("resetEmail");
+
+      await verifyCode({
+        email,
+        code: data.verifyCode, // ✅ التصحيح المهم
+      });
+
+      // نخزّن الكود للمرحلة الجاية
+      localStorage.setItem("verificationCode", data.verifyCode);
+
+      navigate("/reset-password");
+    } catch (error) {
+      alert("Invalid verification code");
+    }
   };
 
   return (
     <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
       <div className="flex flex-col gap-10">
         <CustomInputField
-          label="VerifyCode"
-          id="VerifyCode"
-          type="password"
-          isPassword
+          label="Verification Code"
+          id="verifyCode"
+          type="text"
           placeholder="Enter your verification code"
           register={register("verifyCode")}
           error={errors.verifyCode}
         />
+
         <div className="flex flex-col gap-4">
           <p className="text-[#112211] font-medium">
             Didn’t receive a code?{" "}
@@ -46,11 +65,13 @@ export default function VerifyCodeForm() {
               Resend
             </Link>
           </p>
-          <button className="w-full bg-[#27A599] text-[#112211]  py-2 px-4 rounded-lg text-[24px] font-semibold  cursor-pointer hover:text-white transition-colors">
+
+          <button className="w-full bg-[#27A599] text-[#112211] py-2 px-4 rounded-lg text-[24px] font-semibold">
             Verify
           </button>
         </div>
       </div>
+
       <OrLoginSeparator />
       <SocialIcons />
     </form>

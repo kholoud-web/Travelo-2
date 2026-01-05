@@ -8,10 +8,12 @@ import photo from "/assets/images/RECTANGLE.png";
 import eyee from "/assets/icons/close.png";
 import openEye from "/assets/icons/open.png";
 import "../auth.css";
+import { registerTourist } from "../../api/authApi";
 
 export default function SignUPT() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  // Zod schema for form validation
   const schema = z.object({
     name: z.string().min(3, "Name must be at least 3 characters long"),
     email: z.string().email("Invalid email address"),
@@ -25,21 +27,30 @@ export default function SignUPT() {
   });
 
   const navigate = useNavigate();
-
+// React Hook Form setup with Zod resolver
   const { register, handleSubmit, formState: { errors } } = useForm({
     mode: "onChange",
     resolver: zodResolver(schema)
-  });
-
-  const onSubmit = (data) => {
-    console.log(data);
-    // Api Request
-    handleLogin()
+  })
+  // Form Submit Handler ينقل المستخدم لصفحة Login
+  const onSubmit = async (data) => {
+    try {
+    const payload = {
+      userName: data.name,
+      email: data.email,
+      phoneNumber: data.phone,
+      password: data.password,
+      confirmPassword: data.confirmPassword,
+    };
+    await registerTourist(payload);
+  // Navigate to Login page
+    navigate("/login"); // بعد النجاح
+    } catch (error) {
+      console.error(error.response?.data);
+      alert("Registration failed");
+    }
   };
-
-  function handleLogin() {
-    navigate("/Login");
-  }
+ 
 
   return (
     <div className="flex flex-row gap-24 mt-[5px]">

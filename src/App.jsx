@@ -34,10 +34,10 @@ const FlightFlow = lazy(() =>
 );
 
 const FlightLists = lazy(() =>
-  import("./Pages/Home/FlightFlow/flightLists.js")
+  import("./Pages/Home/FlightFlow/FlightLists.jsx")
 );
 const FlightDeals = lazy(() =>
-  import("./Pages/Home/FlightFlow/flightDeals.js")
+  import("./Pages/Home/FlightFlow/FlightDeals.jsx")
 );
 const Loader = () => (
   <div className="flex items-center justify-center min-h-screen">
@@ -57,7 +57,7 @@ import Blog from "./Pages/restaurant/blog/Blog.jsx";
 import SignUPHotel from "./Pages/Auth/SignUPHotel.jsx";
 import SignUPTourist from "./Pages/Auth/SignUPTourist";
 import Contact from "./Pages/contact/Contact.jsx";
-import FlightPayment from "./Pages/Home/FlightFlow/flightPayment.js";
+import FlightPayment from  "./Pages/Home/FlightFlow/flightPayment.jsx";
 import MyNextTripDetails from "./components/profile/MyNextTripDetails.jsx";
 import Home from "./Pages/Home/Home.jsx";
 import City from "./Pages/city/Cities.jsx";

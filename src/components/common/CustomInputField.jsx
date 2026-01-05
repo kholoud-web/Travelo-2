@@ -6,11 +6,10 @@ export default function CustomInputField({
   id,
   type = "text",
   placeholder,
-  value,
-  onChange,
+  register, 
   error,
   isPassword = false,
-  required = false
+  required = false,
 }) {
   const [showPassword, setShowPassword] = useState(false);
   const inputType = isPassword ? (showPassword ? "text" : "password") : type;
@@ -20,15 +19,16 @@ export default function CustomInputField({
       <label htmlFor={id} className="text-sm font-medium text-gray-700">
         {label} {required && <span className="text-red-500">*</span>}
       </label>
+
       <div className="relative">
         <input
-          type={inputType}
           id={id}
+          type={inputType}
           placeholder={placeholder}
-          value={value}
-          onChange={onChange}
+          {...register}  // ✅ هذا هو الصح
           className="border border-gray-300 rounded-lg px-4 py-2.5 w-full focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
         />
+
         {isPassword && (
           <button
             type="button"
@@ -39,7 +39,8 @@ export default function CustomInputField({
           </button>
         )}
       </div>
-      {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+
+      {error && <p className="text-red-500 text-sm mt-1">{error.message}</p>}
     </div>
   );
 }

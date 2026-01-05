@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { flightsDetails } from "../../../data/flightDeals";
-import FlightCheckoutBox from "../../../components/Flight Flow/flight-payment/CheckoutBox";
+import FlightCheckoutBox from "../../../components/FlightFlow/flight-payment/CheckoutBox";
 
 function FlightPayment() {
   const { id } = useParams();

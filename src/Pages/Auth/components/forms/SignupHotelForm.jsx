@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import CustomInputField from "../../../../components/common/CustomInputField";
 import { z } from "zod";
+import { registerHotel } from "../../../../api/authApi";
 
 const signUpHotelSchema = z
   .object({
@@ -58,10 +59,25 @@ export default function SignUpHotelForm() {
     },
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
-    // API request
-  };
+  const onSubmit = async (data) => {
+  try {
+    await registerHotel({
+      hotelId: 0,
+      hotelName: data.hotelName,
+      fullHotelAddress: data.address,
+      responsiblePersonName: data.manager,
+      phoneNumber: data.phone,
+      country: data.country,
+      adminEmail: data.email,
+      password: data.password,
+      confirmPassword: data.confirmPassword,
+    });
+
+    navigate("/login");
+  } catch (err) {
+    console.log(err.response?.data);
+  }
+};
 
   const handleLogin = () => {
     navigate("/Login");
@@ -74,7 +90,7 @@ export default function SignUpHotelForm() {
         id="hotelName"
         placeholder="Enter hotel name"
         register={register("hotelName")}
-        error={errors.hotelName}
+        error={errors.hotelName?.message}
       />
 
       <CustomInputField
@@ -82,7 +98,7 @@ export default function SignUpHotelForm() {
         id="fullAddress"
         placeholder="Enter full hotel address"
         register={register("fullAddress")}
-        error={errors.fullAddress}
+        error={errors.fullAddress?.message}
       />
 
       <CustomInputField
@@ -90,7 +106,7 @@ export default function SignUpHotelForm() {
         id="responsibleName"
         placeholder="Enter responsible person's name"
         register={register("responsibleName")}
-        error={errors.responsibleName}
+        error={errors.responsibleName?.message}
       />
 
       <CustomInputField
@@ -99,7 +115,7 @@ export default function SignUpHotelForm() {
         type="tel"
         placeholder="Enter phone number"
         register={register("phone")}
-        error={errors.phone}
+        error={errors.phone?.message}
       />
 
       <CustomInputField
@@ -107,7 +123,7 @@ export default function SignUpHotelForm() {
         id="country"
         placeholder="Enter country"
         register={register("country")}
-        error={errors.country}
+        error={errors.country?.message}
       />
 
       <CustomInputField
@@ -116,7 +132,7 @@ export default function SignUpHotelForm() {
         type="email"
         placeholder="Enter administrative email"
         register={register("adminEmail")}
-        error={errors.adminEmail}
+        error={errors.adminEmail?.message}
       />
 
       <CustomInputField
@@ -124,7 +140,7 @@ export default function SignUpHotelForm() {
         id="password"
         placeholder="***************"
         register={register("password")}
-        error={errors.password}
+        error={errors.password?.message}
         isPassword
       />
 
@@ -133,7 +149,7 @@ export default function SignUpHotelForm() {
         id="confirmPassword"
         placeholder="***************"
         register={register("confirmPassword")}
-        error={errors.confirmPassword}
+        error={errors.confirmPassword?.message}
         isPassword
       />
 

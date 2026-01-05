@@ -8,14 +8,20 @@ import { Link, useNavigate } from "react-router-dom";
 export default function Login() {
   const navigate = useNavigate(); 
 
-  const handleLogin = (e) => {
-    e.preventDefault(); 
+  const handleLogin = async (data) => {
+  try {
+    const res = await loginUser({
+      email: data.email,
+      password: data.password,
+      rememberMe: true,
+    });
 
-    // api login concept
-    console.log("Login submitted");
-
+    localStorage.setItem("token", res.data.token);
     navigate("/");
-  };
+  } catch (err) {
+    alert("Invalid email or password");
+  }
+};
 
   return (
     <section className="h-screen flex items-center justify-center main-font">
