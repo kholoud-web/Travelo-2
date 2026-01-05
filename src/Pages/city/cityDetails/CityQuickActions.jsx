@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
 
-const CityQuickActions = ({ cityId }) => {
+import { Link, useParams } from "react-router-dom";
+
+const CityQuickActions = () => {
+  const { cityId } = useParams();
   return (
     <section className="max-w-7xl mx-auto px-10 mt-12 flex gap-4">
       <Link

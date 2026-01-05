@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const herosec = () => {
+  const {cityId} = useParams();
   return (
     <section className="flex flex-col lg:flex-row items-center justify-between px-6 py-12 lg:px-24 lg:py-16 bg-white overflow-hidden min-h-screen">
       <div className="w-full lg:w-1/2 flex flex-col items-start space-y-6 z-10 text-center lg:text-left mb-12 lg:mb-0">
@@ -19,7 +20,7 @@ const herosec = () => {
           pharetra dictum neque massa congue.
         </p>
 
-        <Link to="/cities/:cityId/restaurant/menu">
+        <Link to={`/cities/${cityId}/restaurant/menu`}>
           <button className="bg-[#2EC4B6] text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-[#259f8e] hover:scale-105 transition-transform duration-300 mx-auto lg:mx-0">
             See Menu
           </button>

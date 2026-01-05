@@ -89,15 +89,15 @@ const App = () => {
         { path: "modal", element: <Modal /> }, // just a void model
         { path: "payment/:id", element: <Payment /> }, // conect with any payment
         { path: "reservationSuccess/:id", element: <ReservationSuccess /> }, // last payment step
-        { path: "cities/:cityId/restaurant", element: <Restaurant /> },
         { path: "cities", element: <Cities /> },
-        { path: "/cities/:cityId", element: <CityDetails /> },
+        { path: "cities/:cityId/restaurant", element: <Restaurant /> },
+        { path: "cities/:cityId", element: <CityDetails /> },
 
         { path: "cities/:cityId/restaurant/menu", element: <Menu /> },
 
         { path: "flight-flow", element: <FlightFlow /> },
         { path: "flight-lists", element: <FlightLists /> },
-        { path: "Hotels", element: <HotelDetailPage1 /> },
+        { path: "cities/:cityId/Hotels", element: <HotelDetailPage1 /> },
         { path: "PropertyDetails", element: <PropertyDetails /> },
         { path: "map", element: <Mapp /> },
 

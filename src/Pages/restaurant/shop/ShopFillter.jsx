@@ -7,7 +7,7 @@ import LastProduct from "../../../components/restaurant/LastProduct";
 const MIN = 0;
 const MAX = 8000;
 
-function ShopFillter() {
+function ShopFillter({ cityId }) {
   const categories = [
     { name: "Sandwiches" },
     { name: "Burger" },
@@ -60,7 +60,7 @@ function ShopFillter() {
                 <p className="text-xl">Classic Restaurant</p>
                 <span className="text-lg text-[#2EC4B6]">45.00$</span>
               </div>
-              <Link to="/cities/:cityId/restaurant/shop/details">
+              <Link to={`/cities/${cityId}/restaurant/shop/details`}>
                 <button className="text-xl text-white font-semibold bg-gray-200/25 hover:bg-gray-200/40 transition-colors duration-500 px-4 py-2 rounded-xl">
                   Shop Now
                 </button>

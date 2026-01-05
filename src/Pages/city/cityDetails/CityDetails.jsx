@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import CityQuickActions from "./CityQuickActions";
 import CityHero from "./CityHero";
 import CityHotelsPreview from "./CityHotelsPreview";

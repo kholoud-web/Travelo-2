@@ -28,7 +28,7 @@ const CityRestaurantsPreview = ({ cityId }) => {
           </h2>
 
           <Link
-            to={`/cities/${cityId}/restaurants`}
+            to={`/cities/${cityId}/restaurant`}
             className="text-teal-500 font-semibold"
           >
             View All
