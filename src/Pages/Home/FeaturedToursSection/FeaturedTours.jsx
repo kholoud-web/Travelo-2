@@ -24,13 +24,15 @@ const FeaturedTours = () => {
         setTours(response.data);
       } catch (error) {
         console.error(error);
-      } finally {
-        setLoading(false);
       }
     };
 
     getTours();
   }, []);
+
+  useEffect(() => {
+    tours.length > 0 && setLoading(false);
+  }, [tours]);
 
   return (
     <>
@@ -53,10 +55,10 @@ const FeaturedTours = () => {
 
       {loading ? (
         <p className="px-10 flex gap-5">
-          <SkeletonCard/>
-          <SkeletonCard/>
-          <SkeletonCard/>
-          <SkeletonCard/>
+          <SkeletonCard />
+          <SkeletonCard />
+          <SkeletonCard />
+          <SkeletonCard />
         </p>
       ) : (
         <div className="px-10">

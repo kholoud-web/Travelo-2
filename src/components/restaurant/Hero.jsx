@@ -1,7 +1,8 @@
 import menuHero from "../../assets/img/menu_hero.jpg";
 import { Link } from "react-router-dom";
 
-function Hero({title, page}) {
+function Hero({title, page, cityId}) {
+  
   return (
     <div
       className="relative h-[50vh] bg-cover bg-center flex flex-col items-center justify-center"
@@ -13,7 +14,7 @@ function Hero({title, page}) {
       </h1>
       <p className="relative z-10 ">
         <Link
-          to="/restaurant"
+          to={`/cities/${cityId}/restaurant`}
           className="text-white me-3 font-semibold hover:text-[#2EC4B5]"
         >
           Home

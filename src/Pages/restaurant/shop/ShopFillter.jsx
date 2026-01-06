@@ -7,7 +7,7 @@ import LastProduct from "../../../components/restaurant/LastProduct";
 const MIN = 0;
 const MAX = 8000;
 
-function ShopFillter() {
+function ShopFillter({ cityId }) {
   const categories = [
     { name: "Sandwiches" },
     { name: "Burger" },
@@ -34,7 +34,7 @@ function ShopFillter() {
 
   return (
     <>
-      <aside className="w-full lg:w-[340px] space-y-8">
+      <aside className="w-full lg:w-85 space-y-8">
         <div className="bg-white my-4 mx-2.5 border border-[#F2F2F2] rounded-lg py-8 px-6 shadow-sm">
           <div className="mb-6">
             <button className="flex justify-between w-full bg-[#2EC4B6] px-5 py-4 rounded-lg text-white">
@@ -52,7 +52,7 @@ function ShopFillter() {
               ))}
             </div>
             <div
-              className="relative bg-center bg-cover h-[286px] w-[270px] rounded-2xl px-6 py-8 flex flex-col justify-between"
+              className="relative bg-center bg-cover h-71.5 w-67.5 rounded-2xl px-6 py-8 flex flex-col justify-between"
               style={{ backgroundImage: `url(${taste})` }}
             >
               <div className="text-white font-bold">
@@ -60,7 +60,7 @@ function ShopFillter() {
                 <p className="text-xl">Classic Restaurant</p>
                 <span className="text-lg text-[#2EC4B6]">45.00$</span>
               </div>
-              <Link to="/restaurant/shop/details">
+              <Link to={`/cities/${cityId}/restaurant/shop/details`}>
                 <button className="text-xl text-white font-semibold bg-gray-200/25 hover:bg-gray-200/40 transition-colors duration-500 px-4 py-2 rounded-xl">
                   Shop Now
                 </button>

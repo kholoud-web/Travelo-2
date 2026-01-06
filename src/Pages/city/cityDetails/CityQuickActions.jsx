@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
 
-const CityQuickActions = ({ cityId }) => {
+import { Link, useParams } from "react-router-dom";
+
+const CityQuickActions = () => {
+  const { cityId } = useParams();
   return (
     <section className="max-w-7xl mx-auto px-10 mt-12 flex gap-4">
       <Link
@@ -11,7 +13,7 @@ const CityQuickActions = ({ cityId }) => {
       </Link>
 
       <Link
-        to={`/cities/${cityId}/restaurants`}
+        to={`/cities/${cityId}/restaurant`}
         className="border border-teal-500 text-teal-500 px-6 py-3 rounded-lg"
       >
         Explore Restaurants

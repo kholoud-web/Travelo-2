@@ -10,7 +10,7 @@ function MenuItems({ img, title, price, sell, oldPrice }) {
         <img
           src={img}
           alt={title}
-          className="h-[270px] w-[340px] object-cover"
+          className="h-67.5 w-85 object-cover"
         />
 
         {sell && (

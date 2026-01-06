@@ -9,7 +9,7 @@ import d5 from "../../../assets/img/details/d5.jpg";
 import CartTable from './../../../components/restaurant/CartTable';
 import CartSummary from "../../../components/restaurant/CartSummary";
 
-function Cart() {
+function Cart({ cityId }) {
   const [cartItems, setCartItems] = useState([
     { id: 1, title: "Burger", price: 35, qty: 1, img: d1 },
     { id: 2, title: "Fresh Lime", price: 25, qty: 1, img: d2 },
@@ -42,7 +42,7 @@ function Cart() {
 
   return (
     <>
-      <Hero title="Shopping Cart" page="Shop details" />
+      <Hero title="Shopping Cart" page="Shop details " cityId={cityId} />
 
       <CartTable
         items={cartItems}

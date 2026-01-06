@@ -1,6 +1,7 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function HotelDetailPage1() {
+  const { cityId } = useParams();
   const card = [
     {
       image: "/assets/images/detail1.jpg",
