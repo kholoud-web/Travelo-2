@@ -10,7 +10,7 @@ export const fetchAirports = createAsyncThunk(
   "airport/fetchAirports",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get("",{
+      const response = await axios.get(`${BaseURL}/Airport`,{
         headers:{
           "Authorization": `Bearer ${token}`,
         }
@@ -27,7 +27,7 @@ export const SubmitAirports = createAsyncThunk(
   "airport/submitAirports",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.post("",{
+      const response = await axios.post(`${BaseURL}/Airport`,{
         headers:{
           "Authorization": `Bearer ${token}`,
         }
@@ -44,7 +44,7 @@ export const fetchAirportsById = createAsyncThunk(
   "airport/fetchAirportById",
   async (airportId, { rejectWithValue }) => {
     try {
-      const response = await axios.post("",{
+      const response = await axios.post(`${BaseURL}/Airport/{id}`,{
         headers:{
           "Authorization": `Bearer ${token}`,
         }
