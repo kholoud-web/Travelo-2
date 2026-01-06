@@ -39,6 +39,10 @@ const FlightLists = lazy(() =>
 const FlightDeals = lazy(() =>
   import("./Pages/Home/FlightFlow/FlightDeals.jsx")
 );
+
+// const FlightDeals = lazy(() =>
+//   import("./Pages/Home/FlightFlow/flightDeals.js")
+// );
 const Loader = () => (
   <div className="flex items-center justify-center min-h-screen">
     <div className="animate-spin rounded-full h-12 w-12 border-4 border-t-transparent border-blue-500"></div>
@@ -57,10 +61,9 @@ import Blog from "./Pages/restaurant/blog/Blog.jsx";
 import SignUPHotel from "./Pages/Auth/SignUPHotel.jsx";
 import SignUPTourist from "./Pages/Auth/SignUPTourist";
 import Contact from "./Pages/contact/Contact.jsx";
-import FlightPayment from  "./Pages/Home/FlightFlow/flightPayment.jsx";
+import FlightPayment from "./Pages/Home/FlightFlow/FlightPayment.jsx";
 import MyNextTripDetails from "./components/profile/MyNextTripDetails.jsx";
 import Home from "./Pages/Home/Home.jsx";
-import City from "./Pages/city/Cities.jsx";
 import Cities from "./Pages/city/Cities.jsx";
 import CityDetails from "./Pages/city/cityDetails/CityDetails.jsx";
 
@@ -71,6 +74,8 @@ const PropertyDetails = lazy(() =>
   import("./components/HotelDetail/PropertyDetails.jsx")
 );
 const Mapp = lazy(() => import("./components/HotelDetail/map.jsx"));
+import FlightLists from './Pages/Home/FlightFlow/FlightLists';
+import { FlightDealsSection } from "./components/FlightFlow/flightDeeals.jsx";
 
 const App = () => {
   const router = createHashRouter([
@@ -106,7 +111,7 @@ const App = () => {
         { path: "restaurant/shop/details", element: <ShopDetails /> },
         { path: "restaurant/blog", element: <Blog /> },
         { path: "cart", element: <Cart /> },
-        { path: "flight-lists/:id", element: <FlightDeals /> },
+        { path: "flight-lists/:id", element: <FlightDealsSection /> },
         { path: "flight-lists/:id/payment", element: <FlightPayment /> },
         { path: "contact", element: <Contact /> },
 

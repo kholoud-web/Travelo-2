@@ -16,8 +16,6 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { flightsDetails, amenitiesGrid } from "../../../data/flightDeals";
 import AmenitiesSlider from "../../../components/Flight Flow/AmenitiesSlider";
-
-
 export default function FlightDealPage() {
   const { id } = useParams();
   const flightId = Number(id);
